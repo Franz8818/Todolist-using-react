@@ -1,0 +1,13 @@
+[{
+    "id": 1,
+    "task": "estudiar",
+    "completed": false
+}, {
+    "id": 2,
+    "task": "trabajar",
+    "completed": false
+}, {
+    "id": 3,
+    "task": "trabajar",
+    "completed": true
+}]
