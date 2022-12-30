@@ -131,21 +131,19 @@ const Home = () => {
             onKeyDown={addTask}
           />
         </div>
-        <ol className="list-group">
-          {lista?.map((elemento, indice) => {
-            return (
-              <li
-                className="list-group-item d-flex justify-content-between align-items-start"
-                key={indice}
-              >
-                <div className="ms-2 me-auto">
+        <ul className="list-group">
+          { lista?.map((elemento, indice) => (
+            
+            <li className="list-group-item d-flex justify-content-between align-items-start"
+                key={indice}>
+            <div className="ms-2 me-auto">
+
                   <div className="fw-bold">{elemento.label}</div>
+                <span className="badge bg-primary rounded-pill" onClick={()=>eliminar(indice)}> X</span>
                 </div>
-                <span className="badge bg-primary rounded-pill">X</span>
-              </li>
-            );
-          })}
-        </ol>
+              </li>            
+          ))}
+        </ul>
       </div>
     </div>
   );
