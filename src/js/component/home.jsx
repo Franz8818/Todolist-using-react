@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react"; // 1. IMPORTO EL HOOK useState
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
 //create your first component
 const Home = () => {
   //DOS FUNCIONES
-  const [tarea, setTarea] = useState("");
-  const [lista, setLista] = useState([]);
+  const [tarea, setTarea] = useState(""); // STRING
+  const [lista, setLista] = useState([]); // ARRAY QUE TIENE OBJETOS DENTRO
 
-  const addTask = (event) => {
+  const addTask = (event) => { // ES UNA FUNCION - ARROW FUNTION
     if (event.key === "Enter" && !tarea == "" && !tarea.length <= 40) {
       let tareaActual = { label: tarea, done: false };
       setLista((actual) => [...actual, tareaActual]);
+      setTarea("")
     }
   };
   const removeTask = (indice) => {
@@ -23,7 +21,7 @@ const Home = () => {
   }
 
 
-  // function "traertarea" usa FETCH y METHOD "Get" para traer el array vacio
+  // function "createUser" usa FETCH y METHOD "Get" para traer el array vacio
   const createUser = async () => {
     try {
       const response = await fetch(
@@ -127,7 +125,7 @@ const Home = () => {
             aria-label="Username"
             aria-describedby="addon-wrapping"
             onChange={(e) => setTarea(e.target.value)}
-            value={tarea}
+            value={tarea} 
             onKeyDown={addTask}
           />
         </div>
@@ -137,9 +135,8 @@ const Home = () => {
             <li className="list-group-item d-flex justify-content-between align-items-start"
                 key={indice}>
             <div className="ms-2 me-auto">
-
                   <div className="fw-bold">{elemento.label}</div>
-                <span className="badge bg-primary rounded-pill" onClick={()=>eliminar(indice)}> X</span>
+                <span className="badge bg-primary rounded-pill" role="button" onClick={()=>removeTask(indice)}> X</span>
                 </div>
               </li>            
           ))}
