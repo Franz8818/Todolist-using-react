@@ -103,25 +103,25 @@ const Home = () => {
   useEffect(() => {getTasks()}, []);
 
   return (
-    <div className="container col-md-4">
-      <div className="col-md-12">
-        <h1>TODOS</h1>
-        <div className="d-block">
+    <div className="card p-1 container col-md-4">
+      <div className="ms-1">
+        <h1>To Do List</h1>
+        <div className="d-block ms-2">
           <button className="btn btn-primary" onClick={() => createUser()}>
-            Crear lista
+            New list
           </button>
-          <button className="btn btn-primary" onClick={() => updateList()}>
-            Actualizar lista
+          <button className="btn btn-primary ms-2" onClick={() => updateList()}>
+            Save
           </button>
-          <button className="btn btn-primary" onClick={() => deleteUser()}>
-            Eliminar lista
+          <button className="btn btn-primary ms-2" onClick={() => deleteUser()}>
+          delete
           </button>
         </div>
-        <div className="input-group flex-nowrap">
+        <div className="input-group flex-nowrap p-2">
           <input
             type="text"
             className="form-control"
-            placeholder="¡para hacer!"
+            placeholder="to make!"
             aria-label="Username"
             aria-describedby="addon-wrapping"
             onChange={(e) => setTarea(e.target.value)}

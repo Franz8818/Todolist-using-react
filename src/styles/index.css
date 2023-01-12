@@ -12,3 +12,9 @@
 .container {
     margin-top: 10%;
 }
+
+input::placeholder {
+    opacity: 8.0;
+    font-size: 1.1em;
+    font-style: italic;
+}
